@@ -125,7 +125,7 @@ console.log("F2 normal:", cariBerdasarkanId(daftarItem, 3));
 console.log("F2 tidak ditemukan:", cariBerdasarkanId(daftarItem, 99));
 
 // Fungsi 3: saringKategori
-console.log("F3 normal:", saringKategori(daftarItem, "Fiksi"));
+console.log("F3 normal:", saringKategori(daftarItem, "Fiction"));
 console.log("F3 kategori kosong:", saringKategori(daftarItem, "Komik"));
 
 // Fungsi 4: rataRataTersedia
@@ -137,7 +137,7 @@ console.log(
     {
       id: 9,
       nama: "Contoh Buku",
-      kategori: "Fiksi",
+      kategori: "Fiction",
       halaman: 100,
       tersedia: false
     }

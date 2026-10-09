@@ -9,57 +9,57 @@
 const daftarItem = [
   {
     id: 1,
-    nama: "Laskar Pelangi",
-    kategori: "Fiksi",
+    nama: "Bleach",
+    kategori: "Fiction",
     halaman: 529,
     tersedia: true
   },
   {
     id: 2,
-    nama: "Bumi Manusia",
-    kategori: "Sejarah",
+    nama: "Fullmetal Alchemist",
+    kategori: "Fiction",
     halaman: 535,
     tersedia: true
   },
   {
     id: 3,
-    nama: "Atomic Habits",
+    nama: "Islam Ala Prabowo",
     kategori: "Pengembangan Diri",
     halaman: 352,
     tersedia: true
   },
   {
     id: 4,
-    nama: "Filosofi Teras",
-    kategori: "Pengembangan Diri",
+    nama: "Monster",
+    kategori: "Thriller",
     halaman: 320,
     tersedia: false
   },
   {
     id: 5,
-    nama: "Laut Bercerita",
-    kategori: "Fiksi",
+    nama: "Code Geass",
+    kategori: "Sci-Fi",
     halaman: 379,
     tersedia: true
   },
   {
     id: 6,
-    nama: "Negeri 5 Menara",
-    kategori: "Fiksi",
+    nama: "Neon Genesis Evangelion",
+    kategori: "Sci-Fi",
     halaman: 423,
     tersedia: false
   },
   {
     id: 7,
-    nama: "Sapiens",
-    kategori: "Sejarah",
+    nama: "Vagabond",
+    kategori: "Martial Arts",
     halaman: 512,
     tersedia: true
   },
   {
     id: 8,
-    nama: "Deep Work",
-    kategori: "Pengembangan Diri",
+    nama: "Berserk",
+    kategori: "Dark Fantasy",
     halaman: 296,
     tersedia: true
   }
