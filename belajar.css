@@ -1,0 +1,97 @@
+.daftar-kartu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+/* Dua kolom memberi ruang yang cukup untuk kartu pada tablet. */
+@media (min-width: 768px) {
+    .daftar-kartu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tiga kolom memanfaatkan ruang layar desktop tanpa membuat kartu terlalu lebar. */
+@media (min-width: 1024px) {
+    .daftar-kartu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Flexbox memisahkan identitas katalog dan menu navigasi. */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background-color: #1e293b;
+}
+
+/* Nama katalog dibuat lebih menonjol agar mudah dikenali. */
+.nama-katalog {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Flexbox menjaga jarak antartautan tetap konsisten. */
+.menu-navigasi {
+    display: flex;
+    gap: 24px;
+}
+
+.menu-navigasi a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-navigasi a:hover {
+    color: #93c5fd;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+main {
+    padding: 24px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.kartu-buku {
+    background-color: white;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s ease;
+}
+
+.kartu-buku:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+footer {
+    padding: 24px;
+    text-align: center;
+    background-color: #1e293b;
+    color: white;
+}
+.status-buku {
+    font-weight: bold;
+}
+
+.tersedia {
+    color: #15803d;
+}
+
+.tidak-tersedia {
+    color: #dc2626;
+}
