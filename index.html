@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Tugas 1A — buka Console (F12)</title>
-</head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Halaman Katalog Buku</title>
+  <link rel="stylesheet" href="belajar.css">
+</head> 
 <body>
-  <p>Semua hasil ada di <strong>Console</strong>: tekan F12 → tab Console.</p>
-  <!-- Jangan ubah urutan: data.js harus dimuat sebelum logika.js -->
-  <script src="data.js"></script>
-  <script src="logika.js"></script>
+<header>
+  <nav class="navbar">
+    <a class="nama-katalog" href="#beranda">Katalog Buku</a>
+    <div class="menu-navigasi">
+      <a href="#beranda">Beranda</a>
+      <a href="#koleksi">Koleksi</a>
+    </div>
+</nav>
+</header>
+<main id="beranda">
+	<section>
+		<h1>
+			Daftar Koleksi Buku
+		</h1>
+	</section>
+	<section id="koleksi">
+		<h2>
+			Temukan berbagai buku dari beragam kategori.
+		</h2> 
+    <div class="daftar-kartu">
+		<article class="kartu-buku">
+			<h3>Bleach</h3>
+			<p>Kategori: Fiction</p>
+			<p>Jumlah halaman: 529</p>
+			<p>Status: <span class="status-buku tersedia">Tersedia</span></p>
+		</article>
+		<article class="kartu-buku">
+			<h3>Fullmetal Alchemist</h3>
+			<p>Kategori: Fiction</p>
+			<p>Jumlah halaman: 535</p>
+			<p>Status: <span class="status-buku tersedia">Tersedia</span></p>
+    </article>
+		<article class="kartu-buku">
+			<h3>Islam ala Prabowo</h3>
+			<p>Kategori: Pengembangan Diri</p>
+			<p>Jumlah halaman: 352</p>
+			<p>Status: <span class="status-buku tersedia">Tersedia</span></p>
+    </article>
+		<article class="kartu-buku">
+			<h3>Monster</h3>
+			<p>Kategori: Thriller</p>
+			<p>Jumlah halaman: 320</p>
+			<p>Status: <span class="status-buku tidak-tersedia">Tidak Tersedia</span></p>
+    </article>
+		<article class="kartu-buku">
+			<h3>Code Geass</h3>
+			<p>Kategori: Sci-Fi</p>
+			<p>Jumlah halaman: 379</p>
+			<p>Status: <span class="status-buku tersedia">Tersedia</span></p>
+		</article>
+		<article class="kartu-buku">
+			<h3>Neon Genesis Evangelion</h3>
+			<p>Kategori: Sci-Fi</p>
+			<p>Jumlah halaman: 423</p>
+			<p>Status: <span class="status-buku tidak-tersedia">Tidak Tersedia</span></p>
+		</article>
+		<article class="kartu-buku">
+			<h3>Vagabond</h3>
+			<p>Kategori: Martial Arts</p>
+			<p>Jumlah halaman: 512</p>
+			<p>Status: <span class="status-buku tersedia">Tersedia</span></p>
+		</article>
+		<article class="kartu-buku">
+			<h3>Berserk</h3>
+			<p>Kategori: Dark Fantasy</p>
+			<p>Jumlah halaman: 296</p>
+			<p>Status: <span class="status-buku tersedia">Tersedia</span></p>
+		</article>
+    </div>
+	</section>
+</main>
+<footer>
+	© 2026 Katalog Buku | Dibuat oleh fourtyseven
+</footer>
 </body>
 </html>
