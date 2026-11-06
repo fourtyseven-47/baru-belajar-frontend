@@ -1,73 +1,44 @@
-# Proyek Frontend — Metro Institute Season 2
+# Manga Library
 
-Repositori ini adalah **produk kamu sendiri** yang akan terus dikembangkan selama kelas Frontend:
-dari data dan logika, menjadi halaman web, aplikasi React, sampai online di internet.
+**Nama:** [Nama Kamu]  
+**Tema:** Katalog Manga
 
----
+## Deskripsi
 
-## Mulai di sini (sekali saja)
+Manga Library merupakan website katalog manga yang dibuat menggunakan React dan Vite. Website ini menampilkan koleksi manga berdasarkan kategori, jumlah halaman, serta status ketersediaan.
 
-1. Klik tombol hijau **Use this template** → **Create a new repository**.
-2. Beri nama repositori, misalnya `frontend-namakamu`, lalu klik **Create repository**.
-3. Di repositori barumu: **Settings → Collaborators → Add people** → tambahkan **`samythh`** (mentor).
-4. Ambil repositori ke laptop:
+Pengguna dapat menyaring daftar manga menggunakan tombol filter kategori. Tampilan jumlah manga dan tombol aktif akan menyesuaikan kategori yang dipilih.
 
-```bash
-git config --global user.name "Nama Lengkap"
-git config --global user.email "email-github@contoh.com"
+## Teknologi
 
-git clone https://github.com/<username-kamu>/<nama-repo>.git
-cd <nama-repo>
-```
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
 
-> Pastikan yang di-clone adalah **repositori milikmu**, bukan repositori template ini.
+## Fitur
 
----
+- Menampilkan koleksi manga.
+- Filter manga berdasarkan kategori.
+- Menampilkan jumlah manga secara dinamis.
+- Menampilkan informasi jumlah halaman.
+- Menampilkan status ketersediaan manga.
+- Tampilan responsif.
 
-## Cara mengerjakan & mengumpulkan tugas
+## Cara Menjalankan Proyek
 
-Setiap tugas dikerjakan di **branch** tersendiri dan dikumpulkan lewat **Pull Request**.
+1. Clone repositori.
+2. Buka folder proyek melalui terminal.
+3. Install dependencies:
 
-```bash
-# 1. Buat branch untuk tugas
-git checkout -b tugas1a-namakamu
+   ```bash
+   npm install
+   ```
 
-# 2. Kerjakan tugasnya, lalu simpan & kirim
-git add .
-git commit -m "feat: data tema dan fungsi logika"
-git push -u origin tugas1a-namakamu
-```
+4. Jalankan development server:
 
-3. Buka repositorimu di GitHub → klik **Compare & pull request** → judul `Tugas 1A — Nama Kamu` → **Create pull request**.
+   ```bash
+   npm run dev
+   ```
 
-Kesulitan memakai terminal? Gunakan **GitHub Desktop** sebagai alternatif.
-
----
-
-## Isi repositori
-
-| File | Kegunaan |
-|---|---|
-| `index.html` | Penghubung file JavaScript ke browser. Buka file ini, lalu tekan **F12 → Console** |
-| `data.js` | Data tema produkmu (Tugas 1A) |
-| `logika.js` | Fungsi-fungsi logika (Tugas 1A) |
-| `docs/tugas-1a.md` | Soal dan kriteria penilaian Tugas 1A |
-
----
-
-## Aturan main
-
-- **Kode tugas ditulis sendiri.** Boleh bertanya ke mentor, teman, atau referensi lain untuk memahami konsep.
-- **Siap menjelaskan setiap baris kode.** Mentor akan menanyakan alasan di balik kodemu secara acak.
-- **Langkah dulu, kode belakangan.** Tulis langkah penyelesaian sebagai komentar sebelum menulis kode.
-
-## Kalau macet
-
-Tanyakan di grup dengan format:
-
-```
-1. Yang saya coba   : ...
-2. Yang saya harap  : ...
-3. Yang terjadi     : ... (+ screenshot error)
-4. Yang sudah dicoba: ...
-```
+5. Buka alamat localhost yang muncul di terminal.
