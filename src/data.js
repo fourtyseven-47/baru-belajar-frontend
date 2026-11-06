@@ -6,7 +6,7 @@
 //   - plus SATU properti true/false (mis. tersedia, buka, dipinjam)
 //   - minimal 2 kategori berbeda, dan minimal 1 item yang bernilai false
 
-const daftarItem = [
+export const daftarItem = [
   {
     id: 1,
     nama: "Bleach",
