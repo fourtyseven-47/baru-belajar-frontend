@@ -1,6 +1,6 @@
 # Manga Library
 
-**Nama:** [Nama Kamu]  
+**Nama:** Weldia Novianda 
 **Tema:** Katalog Manga
 
 ## Deskripsi
@@ -25,20 +25,26 @@ Pengguna dapat menyaring daftar manga menggunakan tombol filter kategori. Tampil
 - Menampilkan status ketersediaan manga.
 - Tampilan responsif.
 
-## Cara Menjalankan Proyek
+## Cara Menjalankan Project
 
-1. Clone repositori.
-2. Buka folder proyek melalui terminal.
-3. Install dependencies:
+1. Install seluruh dependency:
 
    ```bash
    npm install
    ```
 
-4. Jalankan development server:
+2. Jalankan aplikasi React pada terminal pertama:
 
    ```bash
    npm run dev
    ```
 
-5. Buka alamat localhost yang muncul di terminal.
+3. Jalankan JSON Server pada terminal kedua:
+
+   ```bash
+   npx json-server --watch db.json --port 3001
+   ```
+
+4. Buka alamat aplikasi yang diberikan Vite melalui browser.
+
+Pastikan kedua terminal tetap berjalan agar aplikasi dapat berkomunikasi dengan JSON Server.
