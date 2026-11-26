@@ -50,7 +50,7 @@ WHERE kategori = 'Fiction';
 ```
 
 **Hasil:**  
-[Masukkan hasil query setelah dijalankan.]
+Muncul 2 manga --> Bleach dan Fullmetal Alchemisst
 
 ### B. INSERT
 
@@ -58,11 +58,11 @@ Menambahkan data manga baru.
 
 ```sql
 INSERT INTO manga (nama, kategori, halaman, tersedia)
-VALUES ('Vagabond', 'Martial Arts', 512, 1);
+VALUES ('Naruto', 'Fiction', 595, 1);
 ```
 
 **Hasil:**  
-[Masukkan hasil query setelah dijalankan.]
+[Muncul Manga baru yaitu Naruto]
 
 ### C. UPDATE dengan WHERE
 
@@ -75,7 +75,7 @@ WHERE nama = 'Monster';
 ```
 
 **Hasil:**  
-[Masukkan hasil query setelah dijalankan.]
+Manga Monster berubah status menjadi tersedia
 
 ### D. DELETE dengan WHERE
 
@@ -83,8 +83,8 @@ Menghapus data manga Vagabond.
 
 ```sql
 DELETE FROM manga
-WHERE nama = 'Vagabond';
+WHERE nama = 'Naruto';
 ```
 
 **Hasil:**  
-[Masukkan hasil query setelah dijalankan.]
+Manga Naruto dihapus dari daftar Manga
