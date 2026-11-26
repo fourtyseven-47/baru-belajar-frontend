@@ -1,6 +1,6 @@
 # Manga Library
 
-**Nama:** [Nama Kamu]  
+**Nama:** Weldia Novianda  
 **Tema:** Katalog Manga
 
 ## Deskripsi
