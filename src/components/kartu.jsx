@@ -1,47 +1,46 @@
+import { Link } from "react-router";
+
 function Kartu({ item, onHapus }) {
-  const status = item.tersedia ? "Tersedia" : "Tidak Tersedia";
-
   return (
-    <article className="bg-white rounded-xl shadow-md border border-slate-200 p-5 hover:shadow-xl transition duration-300">
-
-      <div className="flex justify-between items-start gap-3 mb-4">
-        <h2 className="text-xl font-bold text-slate-800">
-          {item.nama}
-        </h2>
-
-        <span className="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">
+    <div className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+      <div className="flex justify-between items-start mb-3">
+        <span className="text-xs font-semibold bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full">
           {item.kategori}
+        </span>
+
+        <span
+          className={`text-xs font-semibold px-3 py-1 rounded-full ${
+            item.tersedia
+              ? "bg-green-100 text-green-600"
+              : "bg-red-100 text-red-600"
+          }`}
+        >
+          {item.tersedia ? "Tersedia" : "Tidak Tersedia"}
         </span>
       </div>
 
-      <div className="space-y-3 text-sm">
-        <p className="text-slate-600">
-          Jumlah halaman:
-          <span className="font-semibold text-slate-900 ml-2">
-            {item.halaman} halaman
-          </span>
-        </p>
+      <Link
+        to={`/manga/${item.id}`}
+        className="text-xl font-bold text-slate-800 hover:text-indigo-600 transition"
+      >
+        {item.nama}
+      </Link>
 
-        <p className="text-slate-600">
-          Status:
-          <span
-            className={`font-semibold ml-2 ${
-              item.tersedia ? "text-green-600" : "text-red-600"
-            }`}
-          >
-            {status}
-          </span>
-        </p>
-      </div>
+      <p className="text-sm text-slate-500 mt-2">
+        {item.halaman} halaman
+      </p>
+
+      <p className="text-sm text-slate-600 mt-3 line-clamp-2">
+        {item.deskripsi || "Belum ada deskripsi untuk manga ini."}
+      </p>
 
       <button
-        onClick={onHapus}
-        className="mt-5 w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
+        onClick={() => onHapus(item.id)}
+        className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
       >
-        Hapus Manga
+        Hapus
       </button>
-
-    </article>
+    </div>
   );
 }
 
