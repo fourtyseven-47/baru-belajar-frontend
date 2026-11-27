@@ -5,28 +5,32 @@
       "nama": "Bleach",
       "kategori": "Fiction",
       "halaman": 529,
-      "tersedia": true
+      "tersedia": true,
+      "deskripsi": "Kisah Ichigo Kurosaki, seorang remaja yang memperoleh kekuatan Shinigami dan bertugas melindungi manusia dari roh jahat."
     },
     {
       "id": 2,
       "nama": "Fullmetal Alchemist",
       "kategori": "Fiction",
       "halaman": 535,
-      "tersedia": true
+      "tersedia": true,
+      "deskripsi": "Kisah dua bersaudara, Edward dan Alphonse Elric, yang melakukan perjalanan untuk mencari Philosopher's Stone demi mengembalikan tubuh mereka setelah sebuah eksperimen alkimia yang gagal."
     },
     {
       "id": 3,
       "nama": "Islam Ala Prabowo",
       "kategori": "Pengembangan Diri",
       "halaman": 352,
-      "tersedia": true
+      "tersedia": true,
+      "deskripsi": ""
     },
     {
       "id": 4,
       "nama": "Monster",
       "kategori": "Thriller",
       "halaman": 320,
-      "tersedia": false
+      "tersedia": false,
+      "deskripsi": "Kisah Dr. Kenzo Tenma, seorang dokter bedah yang terlibat dalam rangkaian misteri dan pengejaran seorang pria berbahaya bernama Johan Liebert."
     },
     {
       "id": 5,

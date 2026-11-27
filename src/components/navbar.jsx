@@ -1,16 +1,37 @@
-function Navbar() {
-  return (
-    <header className="bg-slate-900 text-white shadow-lg">
-      <nav className="max-w-6xl mx-auto px-6 py-5">
-        <h1 className="text-2xl font-bold">
-          Manga Library
-        </h1>
+import { Link, NavLink } from "react-router";
+import { useFavorit } from "../FavoritContext.jsx";
 
-        <p className="text-slate-400 text-sm mt-1">
-          Your Personal Manga Collection
-        </p>
-      </nav>
-    </header>
+function Navbar() {
+  const { daftarFavorit } = useFavorit();
+
+  const gayaLink = ({ isActive }) =>
+    `transition-colors ${
+      isActive
+        ? "text-indigo-600 font-bold"
+        : "text-slate-600 hover:text-indigo-600"
+    }`;
+
+  return (
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <Link to="/" className="text-2xl font-bold text-indigo-600">
+          Manga Library
+        </Link>
+
+        <div className="flex items-center gap-6">
+          <NavLink to="/" end className={gayaLink}>
+            Daftar Manga
+          </NavLink>
+
+          <NavLink to="/favorit" className={gayaLink}>
+            Favorit
+            <span className="ml-1 bg-indigo-600 text-white text-xs px-2 py-1 rounded-full">
+              {daftarFavorit.length}
+            </span>
+          </NavLink>
+        </div>
+      </div>
+    </nav>
   );
 }
 
