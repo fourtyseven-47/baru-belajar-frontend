@@ -3,21 +3,23 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/navbar.jsx";
 import Kartu from "./components/kartu.jsx";
 import TombolFilter from "./components/tombolFilter.jsx";
+import FormTambah from "./components/formTambah.jsx";
+
+// Alamat API JSON Server.
+const ALAMAT_API = "http://localhost:3001/manga";
 
 function App() {
-  // Data dimulai dari array kosong karena belum diambil dari JSON.
   const [daftarItem, setDaftarItem] = useState([]);
-
-  // Status awal memuat karena data belum selesai diambil.
   const [status, setStatus] = useState("memuat");
 
   const [kategori, setKategori] = useState("Semua");
   const [kataKunci, setKataKunci] = useState("");
 
+  // Mengambil data manga dari JSON Server.
   useEffect(() => {
     async function ambilData() {
       try {
-        const respon = await fetch("/manga.json");
+        const respon = await fetch(ALAMAT_API);
 
         if (!respon.ok) {
           throw new Error("Gagal mengambil data manga");
@@ -36,24 +38,84 @@ function App() {
     ambilData();
   }, []);
 
-  // Kategori dibuat berdasarkan data yang berhasil diterima.
+  // Menambahkan manga baru ke JSON Server.
+  async function tambahItem(itemBaru) {
+    try {
+      const respon = await fetch(ALAMAT_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(itemBaru),
+      });
+
+      if (!respon.ok) {
+        throw new Error("Gagal menambahkan manga");
+      }
+
+      const itemTersimpan = await respon.json();
+
+      // Memperbarui tampilan setelah data berhasil disimpan.
+      setDaftarItem((daftarSebelumnya) => [
+        ...daftarSebelumnya,
+        itemTersimpan,
+      ]);
+
+      alert("Manga berhasil ditambahkan!");
+      return true;
+    } catch (error) {
+      console.error(error);
+      alert("Gagal menambahkan manga!");
+      return false;
+    }
+  }
+
+  // Menghapus manga berdasarkan ID.
+  async function hapusItem(item) {
+    const konfirmasi = window.confirm(
+      `Apakah kamu yakin ingin menghapus manga "${item.nama}"?`
+    );
+
+    if (!konfirmasi) return;
+
+    try {
+      const respon = await fetch(`${ALAMAT_API}/${item.id}`, {
+        method: "DELETE",
+      });
+
+      if (!respon.ok) {
+        throw new Error("Gagal menghapus manga");
+      }
+
+      // Menghapus data dari tampilan setelah server berhasil menghapusnya.
+      setDaftarItem((daftarSebelumnya) =>
+        daftarSebelumnya.filter((data) => data.id !== item.id)
+      );
+
+      alert("Manga berhasil dihapus!");
+    } catch (error) {
+      console.error(error);
+      alert("Gagal menghapus manga!");
+    }
+  }
+
+  // Membuat daftar kategori berdasarkan data manga.
   const daftarKategori = [
     "Semua",
     ...new Set(daftarItem.map((item) => item.kategori)),
   ];
 
-  // Penyaringan pertama berdasarkan kategori.
+  // Filter berdasarkan kategori.
   const hasilFilterKategori =
     kategori === "Semua"
       ? daftarItem
       : daftarItem.filter((item) => item.kategori === kategori);
 
-  // Penyaringan kedua berdasarkan kata kunci nama manga.
+  // Filter berdasarkan kata kunci.
   const daftarTampil = hasilFilterKategori.filter((item) =>
     item.nama.toLowerCase().includes(kataKunci.toLowerCase())
   );
 
-  // Jumlah hanya ditampilkan setelah data berhasil diambil.
   const teksJumlah =
     status === "berhasil" ? (
       <p className="text-slate-600 mb-5">
@@ -69,7 +131,6 @@ function App() {
       </p>
     ) : null;
 
-  // Menentukan tampilan berdasarkan status pengambilan data.
   let isi;
 
   if (status === "memuat") {
@@ -94,7 +155,11 @@ function App() {
     isi = (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {daftarTampil.map((item) => (
-          <Kartu key={item.id} item={item} />
+          <Kartu
+            key={item.id}
+            item={item}
+            onHapus={() => hapusItem(item)}
+          />
         ))}
       </div>
     );
@@ -114,6 +179,14 @@ function App() {
             Temukan berbagai manga dari koleksi favoritmu.
           </p>
         </div>
+
+        {/* Form untuk menambahkan manga baru */}
+        <FormTambah
+          onTambah={tambahItem}
+          daftarKategori={daftarKategori.filter(
+            (item) => item !== "Semua"
+          )}
+        />
 
         {/* Kotak pencarian */}
         <div className="mb-6">
@@ -139,7 +212,6 @@ function App() {
         </div>
 
         {teksJumlah}
-
         {isi}
       </main>
 

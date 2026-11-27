@@ -1,6 +1,6 @@
 # Manga Library
 
-**Nama:** Weldia Novianda  
+**Nama:** Weldia Novianda
 **Tema:** Katalog Manga
 
 ## Deskripsi
@@ -27,18 +27,25 @@ Pengguna dapat menyaring daftar manga menggunakan tombol filter kategori. Tampil
 
 ## Cara Menjalankan Proyek
 
-1. Clone repositori.
-2. Buka folder proyek melalui terminal.
-3. Install dependencies:
+1. Clone repositori dan buka folder proyek melalui terminal.
+2. Install seluruh dependency:
 
    ```bash
    npm install
    ```
 
-4. Jalankan development server:
+3. Jalankan development server pada terminal pertama:
 
    ```bash
    npm run dev
    ```
 
-5. Buka alamat localhost yang muncul di terminal.
+4. Jalankan JSON Server pada terminal kedua:
+
+   ```bash
+   npx json-server --watch db.json --port 3001
+   ```
+
+5. Buka alamat aplikasi yang diberikan Vite melalui browser.
+
+Pastikan kedua terminal tetap berjalan agar aplikasi dapat berkomunikasi dengan JSON Server.
